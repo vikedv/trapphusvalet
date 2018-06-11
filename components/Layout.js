@@ -1,9 +1,9 @@
-import Head from "next/head";
+import Head from 'next/head';
 
 export default ({
   children,
-  title = "Trapphusvalet",
-  description = "Låt inte SD kidnappa din känsla av missnöje"
+  title = 'Trapphusvalet',
+  description = 'Låt inte SD kidnappa din känsla av missnöje',
 }) => (
   <>
     <Head>
