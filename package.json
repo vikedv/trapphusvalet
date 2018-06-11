@@ -9,7 +9,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "deploy": "yarn run build && yarn run export && push-dir --dir=out --branch=gh-pages --cleanup",
+    "deploy": "NODE_ENV=production rm -rf out && yarn run build && yarn run export && touch out/.nojekyll && push-dir --dir=out --branch=gh-pages --cleanup",
     "precommit": "lint-staged"
   },
   "lint-staged": {
