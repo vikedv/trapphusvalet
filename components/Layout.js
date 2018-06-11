@@ -5,7 +5,7 @@ export default ({
   title = 'Trapphusvalet',
   description = 'Låt inte SD kidnappa din känsla av missnöje',
 }) => (
-  <>
+  <div className="container">
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
@@ -27,7 +27,53 @@ export default ({
       <meta name="twitter:image:alt" content="Trapphusvalet" />
       <meta name="twitter:site" content="@trapphusvalet" />
     </Head>
-    {children}
+    <div className="black" />
+    <div className="purple" />
+    <div className="white" />
+    <div className="pink" />
+    <main>{children}</main>
+    <div className="orange" />
+    <div className="white" />
+    <div className="turquoise" />
+    <div className="black" />
+    <style jsx>{`
+      .container {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 50px auto 50px;
+        grid-template-rows: 50px auto 50px;
+      }
+      .black {
+        background-color: black;
+      }
+      .purple {
+        background-color: #5835e5;
+      }
+      .white {
+        background-color: white;
+      }
+      .pink {
+        background-color: #ff0082;
+      }
+      .orange {
+        background-color: #ff8e0a;
+      }
+      .white {
+        background-color: white;
+      }
+      .turquoise {
+        background-color: #00ffd7;
+      }
+      .black {
+        background-color: black;
+      }
+      main {
+        padding: 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    `}</style>
     <style global jsx>{`
       /* http://meyerweb.com/eric/tools/css/reset/
          v2.0 | 20110126
@@ -159,5 +205,5 @@ export default ({
         border-spacing: 0;
       }
     `}</style>
-  </>
+  </div>
 );
