@@ -57,8 +57,14 @@ export default ({
     </table>
     <style jsx>{`
       .sized {
-        height: 50px;
-        width: 50px;
+        height: 1em;
+        width: 1em;
+      }
+      @media (min-width: 600px) {
+        .sized {
+          height: 50px;
+          width: 50px;
+        }
       }
       .black {
         background-color: black;
@@ -152,14 +158,25 @@ export default ({
         font-weight: 700;
       }
       h1 {
-        font-size: 4.242rem;
-        line-height: 4.5rem;
-        margin-top: 3rem;
+        font-size: 2rem;
+        line-height: 2rem;
+      }
+      @media (min-width: 600px) {
+        h1 {
+          font-size: 4.242rem;
+          line-height: 4.5rem;
+        }
       }
       h2 {
-        font-size: 2.828rem;
-        line-height: 3rem;
-        margin-top: 3rem;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+      }
+      @media (min-width: 600px) {
+        h2 {
+          font-size: 2.828rem;
+          line-height: 3rem;
+          margin-top: 3rem;
+        }
       }
       h3 {
         font-size: 1.414rem;
