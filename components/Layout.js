@@ -28,9 +28,8 @@ export default ({
       {/* <meta name="twitter:card" content="summary_large_image" /> */}
       <meta name="twitter:image:alt" content="Trapphusvalet" />
       <meta name="twitter:site" content="@trapphusvalet" />
-
       <link
-        href="https://fonts.googleapis.com/css?family=Lato:400,700"
+        href="https://use.typekit.net/wsv8sfc.css"
         rel="stylesheet"
       />
     </Head>
