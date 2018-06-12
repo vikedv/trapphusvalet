@@ -9,7 +9,9 @@ export default ({
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
       <meta property="og:site_name" content="Trapphusvalet" />
       <meta property="og:title" content={title} />
@@ -26,22 +28,43 @@ export default ({
       {/* <meta name="twitter:card" content="summary_large_image" /> */}
       <meta name="twitter:image:alt" content="Trapphusvalet" />
       <meta name="twitter:site" content="@trapphusvalet" />
+
+      <link
+        href="https://fonts.googleapis.com/css?family=Lato:400,700"
+        rel="stylesheet"
+      />
     </Head>
-    <div className="black" />
-    <div className="purple" />
-    <div className="white" />
-    <div className="pink" />
-    <main>{children}</main>
-    <div className="orange" />
-    <div className="white" />
-    <div className="turquoise" />
-    <div className="black" />
+    <table>
+      <tr>
+        <td className="black sized" />
+        <td className="purple" />
+        <td className="white sized" />
+      </tr>
+      <tr>
+        <td className="pink sized" />
+        <td>
+          <main>
+            <div>{children}</div>
+          </main>
+        </td>
+        <td className="orange sized" />
+      </tr>
+      <tr>
+        <td className="white sized" />
+        <td className="turquoise" />
+        <td className="black sized" />
+      </tr>
+    </table>
     <style jsx>{`
-      .container {
-        min-height: 100vh;
-        display: grid;
-        grid-template-columns: 50px auto 50px;
-        grid-template-rows: 50px auto 50px;
+      .sized {
+        height: 1em;
+        width: 1em;
+      }
+      @media (min-width: 600px) {
+        .sized {
+          height: 50px;
+          width: 50px;
+        }
       }
       .black {
         background-color: black;
@@ -69,140 +92,126 @@ export default ({
       }
       main {
         padding: 1em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      }
+      main > div {
+        max-width: 700px;
+        margin: 0 auto;
       }
     `}</style>
     <style global jsx>{`
-      /* http://meyerweb.com/eric/tools/css/reset/
-         v2.0 | 20110126
-         License: none (public domain)
-      */
-
-      html,
-      body,
-      div,
-      span,
-      applet,
-      object,
-      iframe,
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /*! Typebase.less v0.1.0 | MIT License */
+      /* Setup */
+      html {
+        /* Change default typefaces here */
+        font-family: 'Lato', sans-serif;
+        font-size: 100%;
+        -webkit-font-smoothing: antialiased;
+      }
+      @media (min-width: 600px) {
+        html {
+          font-size: 137.5%;
+        }
+      }
+      /* Copy & Lists */
+      p {
+        line-height: 1.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0;
+      }
+      ul,
+      ol {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      ul li,
+      ol li {
+        line-height: 1.5rem;
+      }
+      ul ul,
+      ol ul,
+      ul ol,
+      ol ol {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      blockquote {
+        line-height: 1.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      /* Headings */
       h1,
       h2,
       h3,
       h4,
       h5,
-      h6,
-      p,
-      blockquote,
-      pre,
-      a,
-      abbr,
-      acronym,
-      address,
-      big,
-      cite,
-      code,
-      del,
-      dfn,
-      em,
-      img,
-      ins,
-      kbd,
-      q,
-      s,
-      samp,
-      small,
-      strike,
-      strong,
-      sub,
-      sup,
-      tt,
-      var,
-      b,
-      u,
-      i,
-      center,
-      dl,
-      dt,
-      dd,
-      ol,
-      ul,
-      li,
-      fieldset,
-      form,
-      label,
-      legend,
-      table,
-      caption,
-      tbody,
-      tfoot,
-      thead,
-      tr,
-      th,
-      td,
-      article,
-      aside,
-      canvas,
-      details,
-      embed,
-      figure,
-      figcaption,
-      footer,
-      header,
-      hgroup,
-      menu,
-      nav,
-      output,
-      ruby,
-      section,
-      summary,
-      time,
-      mark,
-      audio,
-      video {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        font-size: 100%;
-        font: inherit;
-        vertical-align: baseline;
+      h6 {
+        /* Change heading typefaces here */
+        font-family: 'Lato', sans-serif;
+        margin-top: 1.5rem;
+        margin-bottom: 0;
+        line-height: 1.5rem;
+        font-weight: 700;
       }
-      /* HTML5 display-role reset for older browsers */
-      article,
-      aside,
-      details,
-      figcaption,
-      figure,
-      footer,
-      header,
-      hgroup,
-      menu,
-      nav,
-      section {
-        display: block;
+      h1 {
+        font-size: 2rem;
+        line-height: 2rem;
       }
-      body {
-        line-height: 1;
+      @media (min-width: 600px) {
+        h1 {
+          font-size: 4.242rem;
+          line-height: 4.5rem;
+        }
       }
-      ol,
-      ul {
-        list-style: none;
+      h2 {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
       }
-      blockquote,
-      q {
-        quotes: none;
+      @media (min-width: 600px) {
+        h2 {
+          font-size: 2.828rem;
+          line-height: 3rem;
+          margin-top: 3rem;
+        }
       }
-      blockquote:before,
-      blockquote:after,
-      q:before,
-      q:after {
-        content: '';
-        content: none;
+      h3 {
+        font-size: 1.414rem;
       }
+      h4 {
+        font-size: 0.707rem;
+      }
+      h5 {
+        font-size: 0.4713333333333333rem;
+      }
+      h6 {
+        font-size: 0.3535rem;
+      }
+      /* Tables */
       table {
+        width: 100%;
+        border-spacing: 0px;
         border-collapse: collapse;
-        border-spacing: 0;
+      }
+      table td,
+      table th {
+        padding: 0;
+        line-height: 33px;
+      }
+      /* Code blocks */
+      code {
+        vertical-align: bottom;
+      }
+      /* Leading paragraph text */
+      .lead {
+        font-size: 1.414rem;
+      }
+      /* Hug the block above you */
+      .hug {
+        margin-top: 0;
       }
     `}</style>
   </div>
