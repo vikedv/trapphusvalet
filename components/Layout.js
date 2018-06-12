@@ -9,7 +9,9 @@ export default ({
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
       <meta property="og:site_name" content="Trapphusvalet" />
       <meta property="og:title" content={title} />
@@ -32,23 +34,31 @@ export default ({
         rel="stylesheet"
       />
     </Head>
-    <div className="black" />
-    <div className="purple" />
-    <div className="white" />
-    <div className="pink" />
-    <main>
-      <div>{children}</div>
-    </main>
-    <div className="orange" />
-    <div className="white" />
-    <div className="turquoise" />
-    <div className="black" />
+    <table>
+      <tr>
+        <td className="black sized" />
+        <td className="purple" />
+        <td className="white sized" />
+      </tr>
+      <tr>
+        <td className="pink sized" />
+        <td>
+          <main>
+            <div>{children}</div>
+          </main>
+        </td>
+        <td className="orange sized" />
+      </tr>
+      <tr>
+        <td className="white sized" />
+        <td className="turquoise" />
+        <td className="black sized" />
+      </tr>
+    </table>
     <style jsx>{`
-      .container {
-        min-height: 100vh;
-        display: grid;
-        grid-template-columns: 50px auto 50px;
-        grid-template-rows: 50px auto 50px;
+      .sized {
+        height: 50px;
+        width: 50px;
       }
       .black {
         background-color: black;
@@ -75,11 +85,10 @@ export default ({
         background-color: black;
       }
       main {
-        padding: 2em 1em;
-        display: flex;
+        padding: 1em;
       }
       main > div {
-        max-width: 800px;
+        max-width: 700px;
         margin: 0 auto;
       }
     `}</style>
@@ -88,14 +97,18 @@ export default ({
         margin: 0;
         padding: 0;
       }
-
       /*! Typebase.less v0.1.0 | MIT License */
       /* Setup */
       html {
         /* Change default typefaces here */
         font-family: 'Lato', sans-serif;
-        font-size: 137.5%;
+        font-size: 100%;
         -webkit-font-smoothing: antialiased;
+      }
+      @media (min-width: 600px) {
+        html {
+          font-size: 137.5%;
+        }
       }
       /* Copy & Lists */
       p {
@@ -162,7 +175,7 @@ export default ({
       }
       /* Tables */
       table {
-        margin-top: 1.5rem;
+        width: 100%;
         border-spacing: 0px;
         border-collapse: collapse;
       }
