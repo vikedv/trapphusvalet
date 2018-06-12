@@ -106,7 +106,7 @@ export default ({
       /* Setup */
       html {
         /* Change default typefaces here */
-        font-family: 'Lato', sans-serif;
+        font-family: 'Objektiv Mk1', sans-serif;
         font-size: 100%;
         -webkit-font-smoothing: antialiased;
       }
@@ -150,7 +150,7 @@ export default ({
       h5,
       h6 {
         /* Change heading typefaces here */
-        font-family: 'Lato', sans-serif;
+        font-family: 'Objektiv Mk1', sans-serif;
         margin-top: 1.5rem;
         margin-bottom: 0;
         line-height: 1.5rem;
