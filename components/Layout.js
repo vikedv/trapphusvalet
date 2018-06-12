@@ -26,12 +26,19 @@ export default ({
       {/* <meta name="twitter:card" content="summary_large_image" /> */}
       <meta name="twitter:image:alt" content="Trapphusvalet" />
       <meta name="twitter:site" content="@trapphusvalet" />
+
+      <link
+        href="https://fonts.googleapis.com/css?family=Lato:400,700"
+        rel="stylesheet"
+      />
     </Head>
     <div className="black" />
     <div className="purple" />
     <div className="white" />
     <div className="pink" />
-    <main>{children}</main>
+    <main>
+      <div>{children}</div>
+    </main>
     <div className="orange" />
     <div className="white" />
     <div className="turquoise" />
@@ -68,141 +75,113 @@ export default ({
         background-color: black;
       }
       main {
-        padding: 1em;
+        padding: 2em 1em;
         display: flex;
-        justify-content: center;
-        align-items: center;
+      }
+      main > div {
+        max-width: 800px;
+        margin: 0 auto;
       }
     `}</style>
     <style global jsx>{`
-      /* http://meyerweb.com/eric/tools/css/reset/
-         v2.0 | 20110126
-         License: none (public domain)
-      */
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-      html,
-      body,
-      div,
-      span,
-      applet,
-      object,
-      iframe,
+      /*! Typebase.less v0.1.0 | MIT License */
+      /* Setup */
+      html {
+        /* Change default typefaces here */
+        font-family: 'Lato', sans-serif;
+        font-size: 137.5%;
+        -webkit-font-smoothing: antialiased;
+      }
+      /* Copy & Lists */
+      p {
+        line-height: 1.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0;
+      }
+      ul,
+      ol {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      ul li,
+      ol li {
+        line-height: 1.5rem;
+      }
+      ul ul,
+      ol ul,
+      ul ol,
+      ol ol {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      blockquote {
+        line-height: 1.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      /* Headings */
       h1,
       h2,
       h3,
       h4,
       h5,
-      h6,
-      p,
-      blockquote,
-      pre,
-      a,
-      abbr,
-      acronym,
-      address,
-      big,
-      cite,
-      code,
-      del,
-      dfn,
-      em,
-      img,
-      ins,
-      kbd,
-      q,
-      s,
-      samp,
-      small,
-      strike,
-      strong,
-      sub,
-      sup,
-      tt,
-      var,
-      b,
-      u,
-      i,
-      center,
-      dl,
-      dt,
-      dd,
-      ol,
-      ul,
-      li,
-      fieldset,
-      form,
-      label,
-      legend,
-      table,
-      caption,
-      tbody,
-      tfoot,
-      thead,
-      tr,
-      th,
-      td,
-      article,
-      aside,
-      canvas,
-      details,
-      embed,
-      figure,
-      figcaption,
-      footer,
-      header,
-      hgroup,
-      menu,
-      nav,
-      output,
-      ruby,
-      section,
-      summary,
-      time,
-      mark,
-      audio,
-      video {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        font-size: 100%;
-        font: inherit;
-        vertical-align: baseline;
+      h6 {
+        /* Change heading typefaces here */
+        font-family: 'Lato', sans-serif;
+        margin-top: 1.5rem;
+        margin-bottom: 0;
+        line-height: 1.5rem;
+        font-weight: 700;
       }
-      /* HTML5 display-role reset for older browsers */
-      article,
-      aside,
-      details,
-      figcaption,
-      figure,
-      footer,
-      header,
-      hgroup,
-      menu,
-      nav,
-      section {
-        display: block;
+      h1 {
+        font-size: 4.242rem;
+        line-height: 4.5rem;
+        margin-top: 3rem;
       }
-      body {
-        line-height: 1;
+      h2 {
+        font-size: 2.828rem;
+        line-height: 3rem;
+        margin-top: 3rem;
       }
-      ol,
-      ul {
-        list-style: none;
+      h3 {
+        font-size: 1.414rem;
       }
-      blockquote,
-      q {
-        quotes: none;
+      h4 {
+        font-size: 0.707rem;
       }
-      blockquote:before,
-      blockquote:after,
-      q:before,
-      q:after {
-        content: '';
-        content: none;
+      h5 {
+        font-size: 0.4713333333333333rem;
       }
+      h6 {
+        font-size: 0.3535rem;
+      }
+      /* Tables */
       table {
+        margin-top: 1.5rem;
+        border-spacing: 0px;
         border-collapse: collapse;
-        border-spacing: 0;
+      }
+      table td,
+      table th {
+        padding: 0;
+        line-height: 33px;
+      }
+      /* Code blocks */
+      code {
+        vertical-align: bottom;
+      }
+      /* Leading paragraph text */
+      .lead {
+        font-size: 1.414rem;
+      }
+      /* Hug the block above you */
+      .hug {
+        margin-top: 0;
       }
     `}</style>
   </div>
